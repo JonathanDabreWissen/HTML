@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>CSS Selectors</title>
+        <style>
+            p{
+                color: magenta;
+            }
+            p.one {
+                color: red;
+            }
+
+            p.two{
+                color: blue;
+            }
+
+            .three{
+                color: purple;
+            }
+
+            #four{
+                color: green;
+            }
+            span{
+                color:brown;
+            }
+            span>span{
+                background-color: lime;
+            }
+
+            p::first-line{
+                color: pink;
+            }
+
+            p::first-letter{
+                font-size: xx-large;
+                color:red;
+            }
+
+            h1::before{
+                content: 'Welcome Mr./Mrs.';
+            }
+
+            h1::after{
+                content: ' Have a pleasant day';
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Reddy</h1>
+        <h1>Khan</h1>
+        <p class="one">This is from First paragraph</p>
+        <p id="four" class="three">This is from Second paragraph</p>
+        <p class="two">This is from Third paragraph</p>
+        <p class="three">This is from Fourth paragraph</p>
+        <div class="three">This is from div block</div>
+        <br>
+        <span>This is span tag</span> <br>
+        <span>This is span <span>within a </span> span </span> <br>
+        <span>This is span hehe</span><br>
+
+        <p>This is pseudo elements demo Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti minima expedita tenetur dicta, error, quia quam, voluptatem reiciendis debitis vitae laudantium eius quidem?</p>
+    </body>
+</html>
