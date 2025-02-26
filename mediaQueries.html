@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: red;
+                color: yellow;
+                font-family:sans-serif;
+            }
+            @media screen and (max-width:1000px) {
+                body{
+                    background-color: blue;
+                    color: white;
+                    font-family:sans-serif;
+                }
+            }
+            @media screen and (max-width:700px) {
+                body{
+                    background-color: magenta;
+                    color: white;
+                    font-family:sans-serif;
+                }
+            }
+            div{
+                width: 300px;
+                height: 100px;
+                background-color: purple;
+                margin: 50px;
+                padding: 20px;
+                /*border-radius: 10px;*/
+                border: none;
+                animation-name: p2w;
+                animation-duration: 10s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate-reverse;
+            }
+            @keyframes p2w {
+                from{ background-color: purple; color: white;}
+                to{
+                    background-color: white;
+                    color: purple;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>THIS IS TO DEMONSTRATE MEDIA QUERY</h1>
+        <hr>
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt repudiandae eligendi voluptatum veniam quia? Laboriosam veniam enim quibusdam ullam quae asperiores, eligendi maxime velit amet.</h2>
+        <hr>
+        <div class="">I will gradually change my color</div>
+        <h3>THANK YOU</h3>
+    </body>
+</html>

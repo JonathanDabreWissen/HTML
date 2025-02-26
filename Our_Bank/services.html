@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        .navbar{
+            display: flex;
+            padding: 10px;
+
+        }
+        .logo{
+            font-weight: bold;
+            font-size: x-large;
+            margin-right: 10px;
+        }
+        
+        .nav-links{
+            display: flex;
+        }
+        .nav-links>div{
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 5px;
+            
+        }
+        .nav-links>div>a{
+            text-decoration: none;
+            color: black;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .nav-links>div>a:hover{
+            color: #3d48db;
+        }
+
+        .banner-button>button{
+            margin-top: 20px;
+            margin-right: 20px;
+            border-radius: 7px;
+            border: none;
+            padding: 15px;
+            font-size: smaller;
+            
+
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar ">
+            <div class="logo-part" style="display: flex;">
+                <div class=""><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_960_720.png" alt="" height="80px" width="80px"></div>
+                <div class="logo" style="padding-top: 25px;">Our Bank</div>
+            </div>
+            <div class="nav-links" style="padding-top: 25px;">
+                <div><a href="home.html">Home</a></div>
+                <div><a href="#">About</a></div>
+                <div><a href="services.html">Services</a></div>
+                <div><a href="netbanking.html">Netbanking</a></div>
+                <div><a href="#">Contact</a></div>
+            </div>
+        </nav>
+    </header>
+    <section class="services-section">
+        <div class="heading" style="text-align: center; display: flex; justify-content: center;">
+            <div style="width: 60%; text-align: center;">
+                <h1 style="font-size: 40px; margin-bottom: 20px;">Enjoy <span style="color:#3d48db;  "> Our Bank's </span> Amazing Services on Your Fingertips</h1>
+                <h4 style="font-weight: lighter; color: gray;">Experience hassle-free banking with our cutting-edge digital services—secure, fast, and right at your fingertips!</h4>
+            </div>          
+        </div>
+        <div class="services" style="display: flex; gap: 20px; justify-content: center; padding: 30px;">
+            <!-- Service Item 1 -->
+            <div class="service-item" style="width: 45%; background: #f9f9f9; padding: 20px; border-radius: 10px; ">
+                <h2>Track, Plan, and Manage Your Finances Effortlessly</h2>
+                <p>Stay on top of your goals with easy-to-use tools that help you create budgets and stick to them.</p>
+                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <strong>$13,245.00</strong>
+                    <p>2 out of 10 goals completed</p>
+                </div>
+            </div>
+        
+            <!-- Service Item 2 -->
+            <div class="service-item" style="width: 45%; background: #f9f9f9; padding: 20px; border-radius: 10px; ">
+                <h2>Personalized Analytics to Optimize Your Spending</h2>
+                <p>Gain valuable insights into your financial habits and uncover opportunities to save and invest smarter.</p>
+                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+                    <strong>Total Bill: $13,245.00</strong>
+                    <p>Highest Spending: $789.00 in May</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+</html>
