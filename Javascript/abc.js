@@ -33,3 +33,4 @@ a = ()=>{};
 console.log("a value : "+a);
 console.log("a datatype : "+typeof(a));
 
+
