@@ -53,7 +53,7 @@
 <body>
 
     <header>
-        <nav class="navbar ">
+        <nav style="position: sticky;" class="navbar ">
             <div class="logo-part" style="display: flex;">
                 <div class=""><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_960_720.png" alt="" height="80px" width="80px"></div>
                 <div class="logo" style="padding-top: 25px;">Our Bank</div>
@@ -67,36 +67,121 @@
             </div>
         </nav>
     </header>
-    <section class="services-section">
+    <section style="background-color: #f9f9f9;" class="services-section">
         <div class="heading" style="text-align: center; display: flex; justify-content: center;">
             <div style="width: 60%; text-align: center;">
                 <h1 style="font-size: 40px; margin-bottom: 20px;">Enjoy <span style="color:#3d48db;  "> Our Bank's </span> Amazing Services on Your Fingertips</h1>
                 <h4 style="font-weight: lighter; color: gray;">Experience hassle-free banking with our cutting-edge digital services—secure, fast, and right at your fingertips!</h4>
             </div>          
         </div>
-        <div class="services" style="display: flex; gap: 20px; justify-content: center; padding: 30px;">
+        <div class="services" style="display: grid; grid-template-columns: auto auto auto; gap: 20px; justify-content: center; padding: 30px;">
             <!-- Service Item 1 -->
-            <div class="service-item" style="width: 45%; background: #f9f9f9; padding: 20px; border-radius: 10px; ">
-                <h2>Track, Plan, and Manage Your Finances Effortlessly</h2>
-                <p>Stay on top of your goals with easy-to-use tools that help you create budgets and stick to them.</p>
-                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
-                    <strong>$13,245.00</strong>
-                    <p>2 out of 10 goals completed</p>
+            <div style="padding: 20px; display: flex; flex-direction: column; background-color: white;   border-radius: 12px;">
+                <div className="image-part" style="border-radius: 12px; width: 100%;">
+                    <img src="https://img.freepik.com/free-vector/banking-isometric-flowchart_1284-58041.jpg" alt="" style="width: 100%; height: 200px; border-radius: 16px;" />
+                </div>
+                <div className="text-part" style="margin-top: 20px;">
+                    <div className="title" style="font-size: 22px; color: black; font-weight: 600;">Personalized Analytics to Optimize Your Spending</div>
+                    <div style="color: #737373; font-size: 14px; margin-top: 8px;">Gain valuable insights into your financial habits and uncover opportunities to save and invest smarter, grow your money multiple folds.</div>
+                </div>
+                <div className="buttons" style="display: flex; margin-top: 16px; gap: 12px; padding-bottom: 4px;">
+                    <a href={redirectLink} style="background-color: #3d48db; text-decoration: none; display: flex; gap: 8px; align-items: center; color: white; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 8px;">
+                        
+                        <div>Apply</div>
+                    </a>
+                    <a href={redirectLink} style="background-color: white; text-decoration: none; display: flex; gap: 8px; align-items: center; color: black; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);">
+                        
+                        <div>More Info</div>
+                    </a>
                 </div>
             </div>
         
             <!-- Service Item 2 -->
-            <div class="service-item" style="width: 45%; background: #f9f9f9; padding: 20px; border-radius: 10px; ">
-                <h2>Personalized Analytics to Optimize Your Spending</h2>
-                <p>Gain valuable insights into your financial habits and uncover opportunities to save and invest smarter.</p>
-                <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
-                    <strong>Total Bill: $13,245.00</strong>
-                    <p>Highest Spending: $789.00 in May</p>
+
+            <div style="padding: 20px; display: flex; flex-direction: column; background-color: white;   border-radius: 12px;">
+                <div className="image-part" style="border-radius: 12px; width: 100%;">
+                    <img src="https://images.moneycontrol.com/static-mcnews/2022/02/digital-banking_pic-1.jpg?impolicy=website&width=1600&height=900" alt="" style="width: 100%; height: 200px; border-radius: 16px;" />
+                </div>
+                <div className="text-part" style="margin-top: 20px;">
+                    <div className="title" style="font-size: 22px; color: black; font-weight: 600;">Track, Plan, and Manage Your Finances Effortlessly</div>
+                    <div style="color: #737373; font-size: 14px; margin-top: 8px;">Stay on top of your goals with easy-to-use tools that help you create budgets and stick to them and help you grow your money.</div>
+                </div>
+                <div className="buttons" style="display: flex; margin-top: 16px; gap: 12px; padding-bottom: 4px;">
+                    <a href={redirectLink} style="background-color: #3d48db; text-decoration: none; display: flex; gap: 8px; align-items: center; color: white; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 8px;">
+                        
+                        <div>Apply</div>
+                    </a>
+                    <a href={redirectLink} style="background-color: white; text-decoration: none; display: flex; gap: 8px; align-items: center; color: black; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);">
+                        
+                        <div>More Info</div>
+                    </a>
                 </div>
             </div>
+
+            <!-- Service Item 3 -->
+
+            <div style="padding: 20px; display: flex; flex-direction: column; background-color: white;   border-radius: 12px;">
+                <div className="image-part" style="border-radius: 12px; width: 100%;">
+                    <img src="https://wp-asset.groww.in/wp-content/uploads/2019/02/11094409/bestsavingbankaccountsyoucanconsideropeningin2019-01-scaled.jpg" alt="" style="width: 100%; height: 200px; border-radius: 16px;" />
+                </div>
+                <div className="text-part" style="margin-top: 20px;">
+                    <div className="title" style="font-size: 22px; color: black; font-weight: 600;">Secure Digital Banking, UPI and NetBanking</div>
+                    <div style="color: #737373; font-size: 14px; margin-top: 8px;">Enjoy top-tier security with encrypted transactions, biometric authentication, and fraud protection for a seamless banking experience.</div>
+                </div>
+                <div className="buttons" style="display: flex; margin-top: 16px; gap: 12px; padding-bottom: 4px;">
+                    <a href={redirectLink} style="background-color: #3d48db; text-decoration: none; display: flex; gap: 8px; align-items: center; color: white; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 8px;">
+                        
+                        <div>Apply</div>
+                    </a>
+                    <a href={redirectLink} style="background-color: white; text-decoration: none; display: flex; gap: 8px; align-items: center; color: black; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);">
+                        
+                        <div>More Info</div>
+                    </a>
+                </div>
+            </div>
+            
         </div>
 
     </section>
+    <footer style="background-color: #f9f9f9; padding-top: 20px; padding-bottom: 20px;">
+        <div style="background-color:white; margin:30px; padding: 28px; border-radius: 12px; color: black; margin-bottom: 40px; ">
+            <div style="display: flex; flex-direction: column; gap: 32px; justify-content: start; padding-bottom: 28px; border-bottom: 1px solid white;">
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <div style="display: flex; gap: 20px;">
+                        <div>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo_%28cropped%29.svg" alt="" style="width: 40px; padding-top: 5px;" />
+                        </div>
+                        <div style="font-size: 24px; font-weight: 600; padding-top: 4px;">Our Bank</div>
+                    </div>
+                    <div style="display: flex; gap: 64px; font-size: 14px; font-weight: 600;">
+                        <div>Mumbai, India</div>
+                        <div>+91 9977886655</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 80px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="font-size: 14px; font-weight: 600;">Services</div>
+                        <div style="font-size: 14px; font-weight: 600;">About</div>
+                        <div style="font-size: 14px; font-weight: 600;">Testimonials</div>
+                        <div style="font-size: 14px; font-weight: 600;">Pricing</div>
+                        <div style="font-size: 14px; font-weight: 600;">FAQ</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="font-size: 14px; font-weight: 600;">Instagram</div>
+                        <div style="font-size: 14px; font-weight: 600;">Facebook</div>
+                        <div style="font-size: 14px; font-weight: 600;">LinkedIn</div>
+                        <div style="font-size: 14px; font-weight: 600;">X</div>
+                        <div style="font-size: 14px; font-weight: 600;">YouTube</div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px; justify-content: space-between; font-size: 14px; font-weight: 600; margin-top: 20px;">
+                <div>&copy; 2025 Our Bank. All rights reserved</div>
+                <div>Terms of Services</div>
+            </div>
+        </div>
+    </footer>
+    
 
 </body>
 </html>
