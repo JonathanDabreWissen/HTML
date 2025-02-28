@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>DOM Demo 2</title>
+        <script>
+            var disp = true;
+
+            function display(){
+                var login = `
+                    <h3>Please Login</h3>
+                    <form action="abc.html">
+                        Username <input type="text" name="un" required><br>
+                        Password <input type="password" name="pwd" id="" required><br>
+                        <br>
+                        <input type="submit" value="SUBMIT" name="submit">
+                        <input type="reset" value="RESULT" name="reset">
+                    </form>
+                `
+
+                if(disp){
+                    document.getElementById("d1").innerHTML= login;
+                    document.getElementById("s1").innerText="HIDE LOGIN";
+                    document.getElementById("s1").style.color="Red";
+                }
+                else{
+                    document.getElementById("d1").innerHTML= "";
+                    document.getElementById("s1").innerText="SHOW LOGIN";
+                    document.getElementById("s1").style.color="blue";
+                }
+
+                disp  = !disp;
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h1>DOM Demo</h1>
+        <hr>
+
+        <h2 onClick="display()" style="color: blue;"><span id="s1">SHOW LOGIN</span></h2>
+        <div id="d1">
+
+           
+        </div>
+        <hr>
+        <h3>THANK YOU</h3>
+    </body>
+</html>

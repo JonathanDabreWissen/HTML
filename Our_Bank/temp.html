@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+</head>
+<body style="font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+    <div style="border: 2px solid black; padding: 20px; width: 300px; text-align: center; border-radius: 10px;">
+        <h3>LOAN Calculator</h3>
+        <label>Applicant: <input type="text" id="applicant" style="width: 80%; padding: 5px;"></label><br><br>
+        
+        <label>Type:
+            <select id="loanType" onchange="updateLimits()" style="padding: 5px; width: 80%;">
+                <option value="home">HOME</option>
+                <option value="car">CAR</option>
+                <option value="personal">PERSONAL</option>
+            </select>
+        </label><br><br>
+
+        <label>Interest Rate: <span id="interestRate">9%</span></label><br><br>
+
+        <label>Tenure (Years): 
+            <input type="number" id="tenure" min="1" max="30" value="1" style="padding: 5px; width: 80%;">
+        </label><br><br>
+
+        <label>Amount (₹): 
+            <input type="number" id="amount" min="500000" max="10000000" value="500000" style="padding: 5px; width: 80%;">
+        </label><br><br>
+
+        <button onclick="calculateEMI()" style="padding: 10px; width: 100%; font-weight: bold; border-radius: 5px; background-color: black; color: white; cursor: pointer;">CALCULATE</button><br><br>
+
+        <h3>EMI: ₹<span id="emi">0</span></h3>
+    </div>
+
+    <script>
+        function updateLimits() {
+            let loanType = document.getElementById("loanType").value;
+            let interestRate = document.getElementById("interestRate");
+            let tenureInput = document.getElementById("tenure");
+            let amountInput = document.getElementById("amount");
+
+            if (loanType === "home") {
+                interestRate.textContent = "9%";
+                tenureInput.max = 30;
+                tenureInput.value = 1;
+                amountInput.min = 500000;
+                amountInput.max = 10000000;
+                amountInput.value = 500000;
+            } else if (loanType === "car") {
+                interestRate.textContent = "11%";
+                tenureInput.max = 7;
+                tenureInput.value = 1;
+                amountInput.min = 100000;
+                amountInput.max = 1500000;
+                amountInput.value = 100000;
+            } else {
+                interestRate.textContent = "15%";
+                tenureInput.max = 5;
+                tenureInput.value = 1;
+                amountInput.min = 10000;
+                amountInput.max = 500000;
+                amountInput.value = 10000;
+            }
+        }
+
+        function calculateEMI() {
+            let loanType = document.getElementById("loanType").value;
+            let interestRates = { home: 9, car: 11, personal: 15 };
+            let principal = parseFloat(document.getElementById("amount").value);
+            let tenure = parseInt(document.getElementById("tenure").value) * 12;
+            let rate = interestRates[loanType] / 12 / 100; // Monthly interest rate
+
+            let emi = (principal * rate * Math.pow(1 + rate, tenure)) / (Math.pow(1 + rate, tenure) - 1);
+            document.getElementById("emi").textContent = emi ? emi.toFixed(2) : "0";
+        }
+    </script>
+
+</body>
+</html>

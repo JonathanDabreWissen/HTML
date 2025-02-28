@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +10,13 @@
         }
         .navbar{
             display: flex;
-            padding: 10px;
+            padding: 5px;
+            padding-left: 30px;
 
         }
         .logo{
             font-weight: bold;
-            font-size: x-large;
+            font-size: x-larger;
             margin-right: 10px;
         }
         
@@ -55,8 +56,11 @@
     <header>
         <nav style="position: sticky;" class="navbar ">
             <div class="logo-part" style="display: flex;">
-                <div class=""><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_960_720.png" alt="" height="80px" width="80px"></div>
-                <div class="logo" style="padding-top: 25px;">Our Bank</div>
+                <div class=""><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_960_720.png" alt="" height="90px" width="80px"></div>
+                <div class="">
+                    <div class="logo" style="padding-top: 25px;">Our Bank</div>
+                    <div style="font-size: smaller;">अपनों का साथ</div>
+                </div>
             </div>
             <div class="nav-links" style="padding-top: 25px;">
                 <div><a href="home.html">Home</a></div>
@@ -139,7 +143,88 @@
                     </a>
                 </div>
             </div>
-            
+        </div>
+
+        <div class="heading" style="text-align: center; display: flex; justify-content: center;">
+            <div style="width: 60%; text-align: center;">
+                <h1 style="font-size: 40px; margin-bottom: 20px;">Try the new <span style="color:#3d48db;  ">Finance Calculators</span> of Our Bank</h1>
+                <h4 style="font-weight: lighter; color: gray;">Experience hassle-free banking calculations with our cutting-edge calculators, fast, and right at your fingertips!</h4>
+            </div>   
+        </div>
+        <div class="calculator buttons" style="padding-bottom:20px; text-align: center; display: flex; justify-content: center;">
+            <div className="buttons" style="display: flex; margin-top: 16px; gap: 12px; padding-bottom: 4px;">
+                <a href={redirectLink} style="background-color: #3d48db; text-decoration: none; display: flex; gap: 8px; align-items: center; color: white; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 8px;">
+                    
+                    <div>Loan Calculator</div>
+                </a>
+                <a href={redirectLink} style="background-color: white; text-decoration: none; display: flex; gap: 8px; align-items: center; color: black; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 8px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);">
+                    
+                    <div>Deposit Calculator</div>
+                </a>
+            </div>
+        </div>
+        <div class="" style=" display: flex; justify-content: center;">
+            <div style="background-color: white; padding: 30px; padding-top: 20px; padding-bottom: 10px; width: 300px;  border-radius: 20px;">
+                <form onsubmit="handleSubmit(event)">
+
+                    <h3 style="font-size: x-large; text-align: center;"><span style="color: #3d48db;">Loan</span> Calculator</h3>
+                    <label style="text-align: left; color:black; margin-bottom: 5px; font-size: small;">Applicant </label>
+                    <input type="text" id="applicant" style="width: 90%; border: 1px solid #aeb0b2; outline: none; border-radius: 7px; padding: 10px; margin-top: 7px;"  onfocus="this.style.outline='1px solid blue'" onblur="this.style.outline='none'"><br><br>
+                    
+                    <label style="text-align: left; color:black; margin-bottom: 5px; font-size: small;">Type</label>
+                    <div>
+                        <select id="loanType" onchange="updateLimits()" style="font-size: small; padding: 10px; border: 1px solid #aeb0b2; outline: none; border-radius: 7px; width: 97%; margin-top: 7px;">
+                            <option value="home">HOME</option>
+                            <option value="car">CAR</option>
+                            <option value="personal">PERSONAL</option>
+                        </select>
+                    </div>
+                    <br>
+                    
+                    <span id="interestRate" style="color: #3d48db;  font-weight: bold;">9%</span>
+                    <label style="text-align: left; color:black; margin-bottom: 5px; font-size: small;">Interest Rate</label> 
+                    <br><br>
+                    
+                    <label style="text-align: left; color:black; margin-bottom: 5px; font-size: small;">Tenure (Years) </label>
+                    <input type="number" id="tenure" min="1" max="30" value="1" style="width: 90%; border: 1px solid #aeb0b2; outline: none; border-radius: 7px; padding: 10px; margin-top: 7px;"  onfocus="this.style.outline='1px solid blue'" onblur="this.style.outline='none'">
+                    <br><br>
+                    
+                    <label style="text-align: left; color:black; margin-bottom: 5px; font-size: small;">Amount (₹)
+                        <input type="number" id="amount" min="500000" max="10000000" value="500000" style="width: 90%; border: 1px solid #aeb0b2; outline: none; border-radius: 7px; padding: 10px; margin-top: 7px;"  onfocus="this.style.outline='1px solid blue'" onblur="this.style.outline='none'">
+                    </label><br><br>
+                    
+                    <button onclick="calculateEMI()" style="padding: 10px; width: 100%; font-weight: bold; border:none; border-radius: 7px; background-color: #3d48db; color: white; cursor: pointer;">CALCULATE</button><br><br>                    
+                    <h3 style="color: #3d48db;  text-align: center; font-size: xx-large; margin-top: 10px; margin-bottom: 0;">₹<span id="emi">0</span></h3>
+                    <p style="font-size: x-small; text-align: center; margin-top: 4px;">EMI</p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Deposit Calculator -->
+        <div class="" style=" display: flex; justify-content: center; margin-top: 20px;">            
+            <div style="background-color: white; padding: 30px; padding-top: 20px; padding-bottom: 10px; width: 300px;  border-radius: 20px;">
+                <form onsubmit="handleSubmit(event)">
+
+                    <h3 style="font-size: x-large; text-align: center;"><span style="color: #3d48db;">Deposit</span> Calculator</h3>
+                    
+                    <label style="text-align: left; color:black; margin-bottom: 5px; font-size: small;">Amount (₹) 
+                        <input type="number" id="depositAmount" min="500" max="10000000" value="500" style="width: 90%; border: 1px solid #aeb0b2; outline: none; border-radius: 7px; padding: 10px; margin-top: 7px;"  onfocus="this.style.outline='1px solid blue'" onblur="this.style.outline='none'">
+                    </label><br><br>
+                    
+                    <span id="loanInterestRate" style="color: #3d48db;  font-weight: bold;">7%</span>
+                    <label style="text-align: left; color:black; margin-bottom: 5px; font-size: small;">Monthly Interest Rate</label> 
+                    <br><br>
+                    
+                    <label style="text-align: left; color:black; margin-bottom: 5px; font-size: small;">Tenure (Years) </label>
+                    <input type="number" id="depositTenure" min="1" max="30" value="1" style="width: 90%; border: 1px solid #aeb0b2; outline: none; border-radius: 7px; padding: 10px; margin-top: 7px;"  onfocus="this.style.outline='1px solid blue'" onblur="this.style.outline='none'">
+                    <br><br>
+                    
+                    
+                    <button onclick="calculateMaturity()" style="padding: 10px; width: 100%; font-weight: bold; border:none; border-radius: 7px; background-color: #3d48db; color: white; cursor: pointer;">CALCULATE</button><br><br>                    
+                    <h3 style="color: #3d48db;  text-align: center; font-size: xx-large; margin-top: 10px; margin-bottom: 0;">₹<span id="maturity">0</span></h3>
+                    <p style="font-size: x-small; text-align: center; margin-top: 4px;">Maturity</p>
+                </form>
+            </div>
         </div>
 
     </section>
@@ -181,6 +266,65 @@
             </div>
         </div>
     </footer>
+
+
+
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevents page reload
+            console.log("Form submitted without reload!");
+        }
+        function updateLimits() {
+            let loanType = document.getElementById("loanType").value;
+            let interestRate = document.getElementById("interestRate");
+            let tenureInput = document.getElementById("tenure");
+            let amountInput = document.getElementById("amount");
+
+            if (loanType === "home") {
+                interestRate.textContent = "9%";
+                tenureInput.max = 30;
+                tenureInput.value = 1;
+                amountInput.min = 500000;
+                amountInput.max = 10000000;
+                amountInput.value = 500000;
+            } else if (loanType === "car") {
+                interestRate.textContent = "11%";
+                tenureInput.max = 7;
+                tenureInput.value = 1;
+                amountInput.min = 100000;
+                amountInput.max = 1500000;
+                amountInput.value = 100000;
+            } else {
+                interestRate.textContent = "15%";
+                tenureInput.max = 5;
+                tenureInput.value = 1;
+                amountInput.min = 10000;
+                amountInput.max = 500000;
+                amountInput.value = 10000;
+            }
+        }
+
+        function calculateEMI() {
+            let loanType = document.getElementById("loanType").value;
+            let interestRates = { home: 9, car: 11, personal: 15 };
+            let principal = parseFloat(document.getElementById("amount").value);
+            let tenure = parseInt(document.getElementById("tenure").value) * 12;
+            let rate = interestRates[loanType] / 12 / 100; // Monthly interest rate
+
+            let emi = (principal * rate * Math.pow(1 + rate, tenure)) / (Math.pow(1 + rate, tenure) - 1);
+            document.getElementById("emi").textContent = emi ? emi.toFixed(2) : "0";
+        }
+        
+        function calculateMaturity(){
+            let principal = parseFloat(document.getElementById("depositAmount").value)
+            let tenure = parseInt(document.getElementById("depositTenure").value) * 12;
+            
+            let maturity = principal * Math.pow(1 + (0.07 / 12), tenure * 12);
+            document.getElementById("maturity").textContent = maturity ? maturity.toFixed(2) : "0";
+
+        }
+    </script>
     
 
 </body>
