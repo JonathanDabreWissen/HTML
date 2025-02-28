@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>DOM Demo</title>
+        <script>
+            function welcome1(fname, lname){
+                
+                alert("Welcome 1!! " +fname +" " +lname);
+            }
+            function welcome2(){
+                var fname = document.getElementsByName("t1")[0].value;
+                var lname = document.getElementsByName("t2")[0].value;
+                alert("Welcome 2!! " +fname +" " +lname);
+            }
+            function welcome3(){
+                var fname = document.getElementById("i1").value;
+                var lname = document.getElementById("i2").value;
+                alert("Welcome 3!! " +fname +" " +lname);
+            }
+            function welcome4(){
+                var fname = document.forms[0].t1.value;
+                var lname = document.forms[0].t2.value;
+                alert("Welcome 4!! " +fname +" " +lname);
+            }
+            function welcome5(){
+                var fname = document.f1.t1.value;
+                var lname = document.f1.t2.value;
+                alert("Welcome 5!! " +fname +" " +lname);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>DOM Demo</h1>
+        <hr>
+        <hr>
+        <h2>Please Login</h2>
+        <form name="f1">
+            <h3>
+                Firstname: <input type="text" name="t1" id="i1"><br>
+                Lastname: <input type="text" name="t2" id="i2"><br><br>
+                <input type="button" name="" value="WELCOME 1" id="" onclick="welcome1(t1.value, t2.value)">
+                <input type="button" name="" value="WELCOME 2" id="" onclick="welcome2()">
+                <input type="button" name="" value="WELCOME 3" id="" onclick="welcome3()">
+                <input type="button" name="" value="WELCOME 4" id="" onclick="welcome4()">
+                <input type="button" name="" value="WELCOME 5" id="" onclick="welcome5()">
+                <br>
+                
+            </h3>
+        </form>
+
+        <h3>Thank You</h3>
+    </body>
+</html>
