@@ -12,6 +12,9 @@
             display: flex;
             padding: 5px;
             padding-left: 30px;
+            position: sticky;
+            top: 0; /* Ensures it sticks to the top */
+            z-index: 1000;
 
         }
         .logo{
@@ -54,7 +57,7 @@
 <body>
 
     <header>
-        <nav style="position: sticky;" class="navbar ">
+        <nav class="navbar ">
             <div class="logo-part" style="display: flex;">
                 <div class=""><img src="https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_960_720.png" alt="" height="90px" width="80px"></div>
                 <div class="">
