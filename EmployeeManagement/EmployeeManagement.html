@@ -245,38 +245,80 @@
             
             // Initialize employees array with local storage data or empty array
             let employees = JSON.parse(localStorage.getItem('employees')) || [];
+
+            async function fetchEmployees() {
+                try {
+                    const response = await fetch('http://localhost:8282/employees');
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch employees');
+                    }
+                    const data = await response.json(); // Fetch employees from API
+                    console.log("Fetch was successfull");
+                    renderEmployees(data); // Render the fetched data
+                } catch (error) {
+                    console.error('Error fetching employees:', error);
+                    employeeList.innerHTML = '<tr><td colspan="6" style="text-align: center; color: red;">Failed to load employees</td></tr>';
+                }
+            }
+            
+            // Call fetchEmployees when the page loads
+            fetchEmployees();
+            
             
             // Track selected employee for update
             let selectedEmployeeId = null;
             
             // Initial rendering of employee table
-            renderEmployees();
+            //renderEmployees();
             
             // Add employee event listener
-            addBtn.addEventListener('click', function() {
+            addBtn.addEventListener('click', async function () {
                 // Validate inputs
                 if (!validateInputs()) {
                     return;
                 }
-                
-                // Add new employee
+            
+                // Create new employee object
                 const newEmployee = {
                     id: getNextId(),
                     name: nameInput.value,
                     position: positionInput.value,
                     department: departmentInput.value,
-                    salary: parseFloat(salaryInput.value)
+                    salary: parseInt(salaryInput.value, 10) // Ensure salary is an integer
                 };
+            
+                try {
+                    const response = await fetch('http://localhost:8282/employees', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(newEmployee)
+                    });
                 
-                // Add to array and localStorage
-                employees.push(newEmployee);
-                saveEmployees();
+                    const responseText = await response.text(); // Read response as text
+                    console.log('Raw API Response:', responseText); // Log the actual response
                 
-                // Update UI
-                showMessage(formMessage, 'Employee added successfully!', 'success');
-                clearForm();
-                renderEmployees();
+                    // Check if response is valid JSON
+                    const addedEmployee = JSON.parse(responseText);
+                    console.log('Parsed JSON:', addedEmployee);
+                
+                    if (!response.ok) {
+                        throw new Error('Failed to add employee');
+                    }
+                
+                    // Update UI
+                    showMessage(formMessage, 'Employee added successfully!', 'success');
+                    clearForm();
+                    fetchEmployees();
+                
+                } catch (error) {
+                    console.error('Error adding employee:', error);
+                    showMessage(formMessage, 'Failed to add employee', 'error');
+                }
+                
             });
+            
             
             // Update employee event listener
             updateBtn.addEventListener('click', function() {
@@ -336,12 +378,9 @@
             });
             
             // Function to get next ID (not zero-based)
+            var count=100;
             function getNextId() {
-                if (employees.length === 0) {
-                    return 1; // Start with ID 1
-                }
-                // Find max ID and add 1
-                return Math.max(...employees.map(emp => emp.id)) + 1;
+                return count;
             }
             
             // Validate form inputs
