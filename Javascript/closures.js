@@ -1,0 +1,17 @@
+
+var increment = function incr(){
+    var a = 0;
+    var plus = function(){
+        a=a+1;
+        console.log(a);
+    }
+
+    console.log("Incr is over");
+    return plus;
+
+}();
+
+increment();
+increment();
+increment();
+increment();

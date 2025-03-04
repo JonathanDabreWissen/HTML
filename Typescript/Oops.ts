@@ -115,3 +115,21 @@ var b = 20;
 
 console.log("The sum of " +a +" and " +b +" is " +(a+b) );
 console.log(`The sum of ${a} and ${b} is ${a+b}`);
+console.log("----------------------------------------");
+
+class Person{
+    name:string;
+
+    constructor(name){
+        console.log("Start of constructor");
+        this.name = name;
+        setTimeout(() => {
+            console.log(`From within constructor: ${this.name}`);
+        }, 3000);
+
+        console.log("End of constructor");
+    }
+}
+
+new Person("Ramesh");
+console.log("This statement is not waiting for anyone");

@@ -93,3 +93,23 @@ var arr2 = ["Hi", "Hello", "How are you", "Thanks", "Bye"];
 arr1.push("Just for demo");
 console.log(arr1);
 console.log(arr2);
+console.log("----------------------------------------");
+var a = 10;
+var b = 20;
+console.log("The sum of " + a + " and " + b + " is " + (a + b));
+console.log("The sum of ".concat(a, " and ").concat(b, " is ").concat(a + b));
+console.log("----------------------------------------");
+var Person = /** @class */ (function () {
+    function Person(name) {
+        var _this = this;
+        console.log("Start of constructor");
+        this.name = name;
+        setTimeout(function () {
+            console.log("From within constructor: ".concat(_this.name));
+        }, 3000);
+        console.log("End of constructor");
+    }
+    return Person;
+}());
+new Person("Ramesh");
+console.log("This statement is not waiting for anyone");
