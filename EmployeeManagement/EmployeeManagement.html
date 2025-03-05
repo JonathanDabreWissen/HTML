@@ -167,6 +167,10 @@
         
         <div class="form-container">
             <div class="form-group">
+                <label for="id">ID</label>
+                <input type="number" min="1" id="id" placeholder="Enter employee ID">
+            </div>
+            <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" placeholder="Enter employee name">
             </div>
@@ -229,6 +233,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Get DOM elements
+            const idInput = document.getElementById('id');
             const nameInput = document.getElementById('name');
             const positionInput = document.getElementById('position');
             const departmentInput = document.getElementById('department');
@@ -280,7 +285,7 @@
             
                 // Create new employee object
                 const newEmployee = {
-                    id: getNextId(),
+                    id: idInput.value,
                     name: nameInput.value,
                     position: positionInput.value,
                     department: departmentInput.value,
@@ -300,8 +305,9 @@
                     console.log('Raw API Response:', responseText); // Log the actual response
                 
                     // Check if response is valid JSON
-                    const addedEmployee = JSON.parse(responseText);
-                    console.log('Parsed JSON:', addedEmployee);
+                    //const addedEmployee = JSON.parse(responseText);
+                    //console.log('Parsed JSON:', addedEmployee);
+                    
                 
                     if (!response.ok) {
                         throw new Error('Failed to add employee');
